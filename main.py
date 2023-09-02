@@ -6,7 +6,7 @@ from asyncio import sleep
 
 # install PyNaCl
 
-#Use only Windows users or if you not installed ffmpeg on your system
+#Use only Windows users or if you are not installed ffmpeg on your system
 FFMPEG_PATH = 'YOUR PATH'
 #Options for yt_dlp
 YDL_OPTIONS = {
@@ -31,7 +31,7 @@ async def play(ctx, args):
     try:
         voice = await ctx.message.author.voice.channel.connect(reconnect=True, timeout=None)
     except:
-        print('Вы должны находится в голосовом канале или уже там находитесь!')
+        print('Error voice')
     if voice.is_playing():
         playlist.add(args)
         print("added")
